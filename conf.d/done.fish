@@ -97,7 +97,7 @@ and test -n __done_get_focused_window_id  # is able to get window id
 			if set -q __done_notification_command
 				eval $__done_notification_command
 			else if type -q terminal-notifier  # https://github.com/julienXX/terminal-notifier
-				terminal-notifier -message "$message" -title "$title" -sender "$sender" -activate "$__done_initial_window_id"
+				terminal-notifier -sound default -message "$message" -title "$title" -sender "$sender" -activate "$__done_initial_window_id"
 
 			else if type -q osascript  # AppleScript
 				osascript -e "display notification \"$message\" with title \"$title\""
